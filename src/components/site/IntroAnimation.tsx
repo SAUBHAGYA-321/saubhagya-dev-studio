@@ -51,15 +51,15 @@ export function IntroAnimation() {
       }
       for (let i = 0; i < dots.length; i++) {
         for (let j = i + 1; j < dots.length; j++) {
-          const dx = dots[i].x - dots[j].x;
-          const dy = dots[i].y - dots[j].y;
-          const dist = Math.hypot(dx, dy);
+          const a = dots[i]!;
+          const b = dots[j]!;
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
           if (dist < 130) {
             ctx.strokeStyle = `rgba(129,140,248,${(1 - dist / 130) * 0.5})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
-            ctx.moveTo(dots[i].x, dots[i].y);
-            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
             ctx.stroke();
           }
         }
