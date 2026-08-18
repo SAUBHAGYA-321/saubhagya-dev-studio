@@ -25,8 +25,33 @@ export const Route = createFileRoute("/collaborate")({
   component: Collaborate,
 });
 
+const TIMES = [
+  "09:00",
+  "10:00",
+  "11:00",
+  "15:00",
+  "16:00",
+  "17:00",
+  "18:00",
+  "19:00",
+  "20:00",
+];
+
+function dayName(date: string) {
+  if (!date) return "";
+  const d = new Date(`${date}T00:00:00`);
+  return Number.isNaN(d.getTime())
+    ? ""
+    : d.toLocaleDateString(undefined, { weekday: "long" });
+}
+
 function Collaborate() {
   const [sending, setSending] = useState(false);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState(TIMES[2]!);
+
+  const today = new Date().toISOString().slice(0, 10);
+  const day = dayName(date);
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,13 +64,14 @@ function Collaborate() {
           kind: "meeting",
           name: String(fd.get("name") ?? ""),
           email: String(fd.get("email") ?? ""),
-          context: `Preferred slot: ${String(fd.get("slot") ?? "not specified")}`,
+          context: `Google Meet · ${day || "Day"} ${date || "date not set"} at ${time} (IST)`,
           message: String(fd.get("agenda") ?? ""),
         },
       });
       if (res.ok) {
-        toast.success("Meeting request sent — I'll confirm by email.");
+        toast.success("Meeting request sent — I'll email the Google Meet link.");
         form.reset();
+        setDate("");
       } else {
         toast.error("Couldn't send the request. Please email me directly.");
       }
@@ -55,6 +81,7 @@ function Collaborate() {
       setSending(false);
     }
   }
+
 
   return (
     <div className="px-4 py-16">
