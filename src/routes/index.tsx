@@ -92,7 +92,10 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl pb-8">
+      <SkillMarquee />
+
+      <section className="mx-auto max-w-6xl pb-8 pt-10">
+
         <h2 className="sr-only">Highlights</h2>
         <div className="grid gap-5 sm:grid-cols-3">
           {highlights.map(({ icon: Icon, title, body }) => (
