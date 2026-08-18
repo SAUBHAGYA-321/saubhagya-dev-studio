@@ -237,3 +237,16 @@
 @utility animate-sheen {
   animation: none;
 }
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee-left 26s linear infinite;
+}
