@@ -131,9 +131,12 @@ function Collaborate() {
           <span className="glass flex size-11 items-center justify-center rounded-full text-primary">
             <CalendarClock className="size-5" />
           </span>
-          <h2 className="mt-4 font-display text-base font-semibold">Book a meeting</h2>
+          <h2 className="mt-4 font-display text-base font-semibold">
+            Book a Google Meet
+          </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Pick a rough slot and tell me the agenda — I&apos;ll confirm over email.
+            Choose a date and time (IST) — I&apos;ll confirm and email you the Google
+            Meet link.
           </p>
           <form onSubmit={onSubmit} className="mt-5 space-y-3">
             <input
@@ -149,14 +152,39 @@ function Collaborate() {
               placeholder="Your email"
               className="w-full rounded-xl border border-border bg-background/40 px-4 py-3 text-sm outline-none focus:border-primary"
             />
-            <select
-              name="slot"
-              className="w-full rounded-xl border border-border bg-background/40 px-4 py-3 text-sm outline-none focus:border-primary"
-            >
-              <option>Weekday morning</option>
-              <option>Weekday evening</option>
-              <option>Weekend</option>
-            </select>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="block">
+                <span className="label-caps text-muted-foreground">Date</span>
+                <input
+                  name="date"
+                  type="date"
+                  required
+                  min={today}
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="mt-1.5 w-full rounded-xl border border-border bg-background/40 px-4 py-3 text-sm outline-none focus:border-primary"
+                />
+              </label>
+              <label className="block">
+                <span className="label-caps text-muted-foreground">Time (IST)</span>
+                <select
+                  name="time"
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  className="mt-1.5 w-full rounded-xl border border-border bg-background/40 px-4 py-3 text-sm outline-none focus:border-primary"
+                >
+                  {TIMES.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {day ? `${day} · ${date} at ${time} IST · Google Meet` : "Pick a date to see the day"}
+            </p>
+
             <textarea
               name="agenda"
               required
