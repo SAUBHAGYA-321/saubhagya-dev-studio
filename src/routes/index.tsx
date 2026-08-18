@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BrainCircuit, Code2, Sparkles } from "lucide-react";
 import profile from "@/assets/profile.jpg";
 import { GlassCard } from "@/components/site/GlassCard";
+import { SkillMarquee } from "@/components/site/SkillMarquee";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
