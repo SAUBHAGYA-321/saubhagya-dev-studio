@@ -27,10 +27,10 @@ export const Route = createFileRoute("/contact")({
 
 const channels = [
   { icon: Mail, label: "Email", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-  { icon: Phone, label: "Phone", value: CONTACT.phone, href: `tel:${CONTACT.phone}` },
-  { icon: Github, label: "GitHub", value: "@saubhagyasingh", href: CONTACT.github },
-  { icon: Linkedin, label: "LinkedIn", value: "Saubhagya Singh", href: CONTACT.linkedin },
-  { icon: MapPin, label: "Location", value: CONTACT.location, href: undefined },
+  { icon: Phone, label: "Phone", value: +917398515535, href: `tel:${CONTACT.phone}` },
+  { icon: Github, label: "GitHub", value: "https://github.com/SAUBHAGYA-321", href: CONTACT.github },
+  { icon: Linkedin, label: "LinkedIn", value: "https://www.linkedin.com/in/saubhagya-singh321/", href: CONTACT.linkedin },
+  { icon: MapPin, label: "Location", value: "Lucknow, Uttar Pradesh", href: undefined },
 ];
 
 function Contact() {

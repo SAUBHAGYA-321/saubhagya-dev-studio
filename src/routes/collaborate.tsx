@@ -102,7 +102,7 @@ function Collaborate() {
               Follow my repositories, open an issue, or invite me to contribute to yours.
             </p>
             <a
-              href={CONTACT.github}
+              href={"https://github.com/SAUBHAGYA-321"}
               target="_blank"
               rel="noreferrer"
               className="glass glass-hover mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold"

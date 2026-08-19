@@ -87,7 +87,7 @@ function Home() {
           />
           <div className="glass mt-3 flex items-center justify-between rounded-2xl px-4 py-3 text-xs">
             <span className="text-muted-foreground">B.Tech CSE · 2024–2028</span>
-            <span className="font-semibold text-primary">RSMU</span>
+            <span className="font-semibold text-primary">SRMU</span>
           </div>
         </div>
       </section>

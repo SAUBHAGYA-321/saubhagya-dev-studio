@@ -1,8 +1,8 @@
 export const CONTACT = {
   email: "as241204w@gmail.com",
-  phone: "+91 00000 00000",
-  github: "https://github.com/saubhagyasingh",
-  linkedin: "https://linkedin.com/in/saubhagyasingh",
+  phone: "+91 7398515535",
+  github: "https://github.com/SAUBHAGYA-321",
+  linkedin: "https://www.linkedin.com/in/saubhagya-singh321/",
   location: "Lucknow, India",
 };
 

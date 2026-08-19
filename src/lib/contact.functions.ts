@@ -45,9 +45,20 @@ export const sendActivity = createServerFn({ method: "POST" })
     });
 
     if (!res.ok) {
-      console.error("[portfolio-activity] send failed", res.status, await res.text());
-      return { ok: false as const, reason: "send_failed" };
-    }
+  const errorText = await res.text();
+
+  console.error(
+    "[portfolio-activity] send failed",
+    res.status,
+    errorText
+  );
+
+  return {
+    ok: false as const,
+    reason: "send_failed",
+    error: errorText,
+  };
+}
 
     return { ok: true as const };
   });

@@ -1,5 +1,5 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "4",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -83,5 +83,18 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
-  }
+  },
+  "version": "1.0.0",
+  "description": "Introduction & Hero Section Create a modern, visually appealing portfolio website for Saubhagya Singh, a passionate Full Stack Developer and Computer Science student. He is currently pursuing a B.Tech in Computer Science from Ram Swaroop Memorial University (2024–2028) and actively learning Data Structures and Algorithms. He is also working on an AI-based project named “100 AI.” The hero section should include:",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAUBHAGYA-321/saubhagya-dev-studio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SAUBHAGYA-321/saubhagya-dev-studio/issues"
+  },
+  "homepage": "https://github.com/SAUBHAGYA-321/saubhagya-dev-studio#readme"
 }

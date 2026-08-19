@@ -43,7 +43,9 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <a
-            href="/resume.pdf"
+            href="/resume.pdf.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-foreground px-5 py-2.5 label-caps text-background transition-colors hover:bg-foreground/85 sm:inline-flex"
           >
             Resume
